@@ -4,8 +4,8 @@ import { CardContext } from '../../context/cardContext'
 import './cart-icons.style.scss'
 
 const CartIcon = () => {
-	const { isCartOpen, setIsCartOpen } = useContext(CardContext)
-
+	const { isCartOpen, setIsCartOpen, countCart } = useContext(CardContext)
+	console.log(countCart)
 	const handleCart = () => {
 		setIsCartOpen(!isCartOpen)
 	}
@@ -13,7 +13,7 @@ const CartIcon = () => {
 	return (
 		<div onClick={handleCart} className='cart-icon-container'>
 			<ShoppingIcon className='shopping-icon' />
-			<span className='item-count'>0</span>
+			<span className='item-count'>{countCart}</span>
 		</div>
 	)
 }
